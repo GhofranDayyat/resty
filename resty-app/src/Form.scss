@@ -1,0 +1,47 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: balck;
+body {
+    text-align: center;
+    background: rgba(255, 253, 253, 0.856);
+
+}
+form {
+    display: inline-block;
+    margin: 2%;
+    font: 100% $font-stack;
+    color: $primary-color;
+    bottom:0;
+    width:100%;
+    height:60px;  
+    right: 30%;
+
+}
+ #enter-url{
+    margin: 2%;
+}
+#url {
+    width: 22%;
+}
+#methods{
+  label{
+    background: rgba(156, 155, 155, 0.336);
+    margin: 10px;
+    padding: 1%;
+  }
+  label:hover {
+    background: none;
+  }
+}
+
+#show{
+    position: absolute;
+    text-align: left;
+    background: rgba(231, 224, 224, 0.336);
+    border: 2px solid black;
+    margin: 5%;
+    margin-top: 3%;
+    height: 5%;
+    padding: 10%;
+    width: 70%;
+    right: 0.5%;
+}
