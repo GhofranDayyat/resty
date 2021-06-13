@@ -69,6 +69,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+# Deploy URL by codesandbox
+[class26 url](https://codesandbox.io/s/intelligent-cdn-5od0q)
+
 
 # UML 
 ![check](./assets/class26.png)
