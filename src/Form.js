@@ -1,6 +1,6 @@
 import React from 'react';
 import './Form.scss';
-   
+import superagent from 'superagent'
 
 
 class Form extends React.Component{
@@ -9,10 +9,16 @@ class Form extends React.Component{
         url:'',
         method: ''
     }
-    clickHandler = (e)=>{ // should be arrow to prevent loss this value 
+    clickHandler = async e=>{ // should be arrow to prevent loss this value 
         e.preventDefault();
-        let newStat = {url: e.target.url.value , method: e.target.method.value}
-        this.setState(newStat)
+         let url = e.target.url.value
+            let res = await superagent.get(url)
+
+        // fetch date 
+        // let res = await fetch(url)
+        // let date = await res.json(); // convert date to json format
+        this.props.handler(res.body.results,res.body.count ,res.headers , url )
+        
     }
     render(){
         return(
@@ -28,7 +34,7 @@ class Form extends React.Component{
             
                     <div id='methods'>
                     <label>GET</label>
-                    <input type='radio' name='method' id='GET' value='GET' />
+                    <input type='radio' name='method' id='GET' value='GET' required/>
                     <label>POST</label>
                     <input type='radio' name='method' id='POST' value='POST' />
                     <label>PUT</label>
@@ -37,10 +43,7 @@ class Form extends React.Component{
                     <input type='radio' name='method' id='DELETE' value='DELETE' />
                     </div>
                 </div>
-                <div id='show'>
-                    <p id='result-method'>{this.state.method}</p>
-                    <p id='result-url'>{this.state.url}</p>
-                </div>
+               
                 </form>
                 </main>
             </React.Fragment>

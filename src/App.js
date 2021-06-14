@@ -1,17 +1,47 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+// import Header from './Header';
+// import Footer from './Footer';
 import Form from './Form';
+import Results from './Results'
 
 
-function App() {
-  return (
-    <React.Fragment>
-      <Header/>
-      <Form/>
-      <Footer/>
-    </React.Fragment>
-  )
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      count : 0,
+      results:{},
+      url:'',
+      headers:{}
+
+    }
+  }
+  handelForm=(results , count ,headers , url)=>{      // tack update from cheild-comp(form) to parint comp state
+    this.setState({results, count,headers,url})
+    // console.log(this.state,'*************');
+  }
+
+  render(){
+    return(
+          //add paraint as empty tag or Freagment tag 
+      <>  
+      {/* <Header/> */}
+      {/* <Footer/> */}
+      <Form handler = {this.handelForm} />
+      <Results res = {this.state}/>
+      </>
+    )
+  }
 }
+// function App() {
+//   return (
+//     <React.Fragment>
+//       <Header/>
+//       <Form/>
+//       <Footer/>
+//       <Results/>
+//     </React.Fragment>
+//   )
+// }
 
 export default App;
