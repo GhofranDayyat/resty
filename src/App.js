@@ -5,7 +5,6 @@ import Footer from './Footer';
 import Form from './Form';
 import Results from './Results'
 
-
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -14,10 +13,10 @@ class App extends React.Component{
       results:{},
       url:'',
       headers:{}
-
+       
     }
   }
-  handelForm=(results , count ,headers , url)=>{      // tack update from cheild-comp(form) to parint comp state
+  handelForm=(results , count ,headers , url)=>{      // tack update from child-comp(form) to paraint comp state
     this.setState({results, count,headers,url})
   }
 

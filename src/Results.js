@@ -11,7 +11,7 @@ class Results extends React.Component{
         return(
        <>
            
-        <div id='show'> 
+        <div id='show'>
                     <ReactJson src={this.props.res.headers} theme="tomorrow"  name='Headers'/>
                     <ReactJson src={this.props.res} theme="tomorrow" name='Response'/>                         
         </div>
