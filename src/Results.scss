@@ -8,14 +8,17 @@ body {
 }
 
 #show{
-    position: absolute;
+    position: relative;
     text-align: left;
-    // background: rgba(231, 224, 224, 0.336);
-    border: 2px solid black;
+    background: rgb(190, 189, 189);
+    // border: 2px solid black;
     margin: 5%;
     margin-top: 3%;
-    height: 5%;
-    padding: 10%;
+    height: 10px;
+    padding: 2%;
+    padding-bottom: 17%;
     width: 70%;
-    right: 0.5%;
+    left: 10%;
+    overflow:hidden;
+    overflow-y: scroll;
 }
