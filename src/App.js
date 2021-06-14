@@ -1,6 +1,7 @@
+
 import React from 'react';
-// import Header from './Header';
-// import Footer from './Footer';
+import Header from './Header';
+import Footer from './Footer';
 import Form from './Form';
 import Results from './Results'
 
@@ -18,15 +19,14 @@ class App extends React.Component{
   }
   handelForm=(results , count ,headers , url)=>{      // tack update from cheild-comp(form) to parint comp state
     this.setState({results, count,headers,url})
-    // console.log(this.state,'*************');
   }
 
   render(){
     return(
           //add paraint as empty tag or Freagment tag 
       <>  
-      {/* <Header/> */}
-      {/* <Footer/> */}
+      <Header/>
+      <Footer/>
       <Form handler = {this.handelForm} />
       <Results res = {this.state}/>
       </>
@@ -45,3 +45,4 @@ class App extends React.Component{
 // }
 
 export default App;
+
