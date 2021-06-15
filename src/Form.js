@@ -4,21 +4,31 @@ import superagent from 'superagent'
 
 
 class Form extends React.Component{
-
-    state={
-        url:'',
-        method: ''
+    constructor(props){
+        super(props)
+        this.state={
+            url:'',
+            method: 'get',  // default get 
+        }
     }
-    clickHandler = async e=>{ // should be arrow to prevent loss this value 
+    clickHandler = e=>{ // should be arrow to prevent loss this value 
         e.preventDefault();
-         let url = e.target.url.value
-            let res = await superagent.get(url)
+        this.setState({fetch:true})
 
-        // fetch date 
-        // let res = await fetch(url)
-        // let date = await res.json(); // convert date to json format
-        this.props.handler(res.body.results,res.body.count ,res.headers , url )
-        
+         let url = e.target.url.value
+         let method =  e.target.method.value
+         let body =e.target.body.value
+         try{
+              superagent[`${method}`](url).send({body}).then(date=>{
+                //  console.log(date.body,'//////////////');
+                let query={method:method, url:url, body:body}
+                this.props.handler(date.headers ,date.body.length ,date.body, date.req.url ,date.req.method)
+                this.props.saveQuery(query)
+            })    
+   
+        }catch(error){
+            this.props.handler('error' , 0 , error.message, url, method,)
+        }
     }
     render(){
         return(
@@ -29,18 +39,20 @@ class Form extends React.Component{
                     <div id='enter-url'>
                     <label>URL: </label>
                     <input type='url' name='url' id='url' required/>
+                    <label>Body</label>
+                    <textarea type='text' name='body' id='body'></textarea>
                     <button type='submit'>GO!</button>
                     </div>
             
                     <div id='methods'>
                     <label>GET</label>
-                    <input type='radio' name='method' id='GET' value='GET' required/>
+                    <input type='radio' name='method' id='GET' value='get'  />
                     <label>POST</label>
-                    <input type='radio' name='method' id='POST' value='POST' />
+                    <input type='radio' name='method' id='POST' value='post'  />
                     <label>PUT</label>
-                    <input type='radio' name='method' id='PUT' value='PUT' />
+                    <input type='radio' name='method' id='PUT' value='put' />
                     <label>DELETE</label>
-                    <input type='radio' name='method' id='DELETE' value='DELETE' />
+                    <input type='radio' name='method' id='DELETE' value='delete'  />
                     </div>
                 </div>
                
