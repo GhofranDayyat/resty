@@ -7,13 +7,12 @@ import ReactJson from 'react-json-view'
 class Results extends React.Component{
     render(){
         // console.log(this.props.results,'****************')
-        console.log(this.props);
         return(
        <>
            
         <div id='show'>
-                    <ReactJson src={this.props.res.headers} theme="tomorrow"  name='Headers'/>
-                    <ReactJson src={this.props.res} theme="tomorrow" name='Response'/>                         
+                    <ReactJson src={this.props.result.headers} theme="tomorrow"  name='Headers'/>
+                    <ReactJson src={this.props.result} theme="tomorrow" name='Response'/>                         
         </div>
        </>
             )
