@@ -3,7 +3,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Form from './Form';
-// import Results from './Results'
+import Results from './Results'
 import History from './History'
 
 
@@ -36,7 +36,7 @@ class App extends React.Component{
       <Header/>
       <Footer/>
       <Form handler = {this.handelForm} saveQuery={this.handelLocalStorage} />
-      {/* <Results result = {this.state}/> */}
+      <Results result = {this.state}/>
       <History storData = {this.state.userStorage}/>
       </>
     )

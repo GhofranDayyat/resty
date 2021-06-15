@@ -19,7 +19,7 @@ class Form extends React.Component{
          let method =  e.target.method.value
          let body =e.target.body.value
          try{
-              superagent[`${method}`](url).send(body).then(date=>{
+              superagent[`${method}`](url).send({body}).then(date=>{
                 //  console.log(date.body,'//////////////');
                 let query={method:method, url:url, body:body}
                 this.props.handler(date.headers ,date.body.length ,date.body, date.req.url ,date.req.method)
