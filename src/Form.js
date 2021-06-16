@@ -8,22 +8,26 @@ class Form extends React.Component{
         super(props)
         this.state={
             url:'',
-            method: 'get',  // default get 
+            method: '' 
         }
     }
     clickHandler = e=>{ // should be arrow to prevent loss this value 
         e.preventDefault();
-        this.setState({fetch:true})
-
+        this.props.toggle()
          let url = e.target.url.value
-         let method =  e.target.method.value
+         let method = e.target.method.value
          let body =e.target.body.value
          try{
               superagent[`${method}`](url).send({body}).then(date=>{
-                //  console.log(date.body,'//////////////');
                 let query={method:method, url:url, body:body}
-                this.props.handler(date.headers ,date.body.length ,date.body, date.req.url ,date.req.method)
-                this.props.saveQuery(query)
+                try{
+                    this.props.handler(date.headers ,date.body.length ,date.body, date.req.url ,date.req.method, true)
+                    this.props.saveQuery(query)
+                }catch(error){
+                    this.props.handler('error' , 0 , error.message, url, method,)
+                }
+
+           
             })    
    
         }catch(error){
@@ -46,13 +50,13 @@ class Form extends React.Component{
             
                     <div id='methods'>
                     <label>GET</label>
-                    <input type='radio' name='method' id='GET' value='get'  />
+                    <input type='radio' name='method' id='get' value='get' defaultChecked />
                     <label>POST</label>
-                    <input type='radio' name='method' id='POST' value='post'  />
+                    <input type='radio' name='method' id='post' value='post'  />
                     <label>PUT</label>
-                    <input type='radio' name='method' id='PUT' value='put' />
+                    <input type='radio' name='method' id='put' value='put' />
                     <label>DELETE</label>
-                    <input type='radio' name='method' id='DELETE' value='delete'  />
+                    <input type='radio' name='method' id='delete' value='delete'  />
                     </div>
                 </div>
                
