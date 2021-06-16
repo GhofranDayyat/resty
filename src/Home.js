@@ -53,20 +53,20 @@ class App extends React.Component{
         <Switch>
           <Route exact path='/'> 
             <Form handler = {this.handelForm} saveQuery={this.handelLocalStorage} toggle={this.toggle}/>
+                <If condition={this.state.recived}>
+                    <Results result = {this.state}/>
+                    <History storData = {this.state.userStorage}/>
+                </If>
                 <Else condition={this.state.recived} >
                     <Loading loading={this.state.loading}>
                         <h2>Waite please</h2>
-
                         <div class="loader"></div>
-
                     </Loading>
                 </Else>
           </Route>
           <Route exact path='/history'>
-            <If condition={this.state.recived}>
-                <Results result = {this.state}/>
-                <History storData = {this.state.userStorage}/>
-            </If>
+          <History storData = {this.state.userStorage}/>
+
           </Route>
           <Route exact path='Help' render={()=><p>from Help</p>}  />
           <Route path='*'>404 Not Found</Route>

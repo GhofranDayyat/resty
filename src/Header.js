@@ -7,22 +7,23 @@ import {Link} from 'react-router-dom';
 const Header = () =>{
     return(
         <header>
-            <h1>RESTy</h1>
-          
-            <h1>
-                <nav>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="history">History</Link>
-                    </li>
-                    <li>
-                        <Link to="help">Help</Link>
-                    </li>
-                </nav>
-            </h1>
-       
+                               
+                <ul>
+                    <nav>
+                        <li>
+                            <h1>RESTy</h1> 
+                        </li>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="history">History</Link>
+                        </li>
+                        <li>
+                            <Link to="help">Help</Link>
+                        </li>
+                    </nav>   
+                </ul>             
         </header>
     )
 }
