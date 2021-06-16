@@ -1,22 +1,27 @@
 import React from 'react';
+import './History.scss'
 
 
-class History extends React.Component{
-    render(){
-        console.log(this.props.storData,'****************')
+
+
+function  handelfillfield(e){
+    e.preventDefault();
+    let [method,url]=(e.target.innerText).split(' ')
+    document.getElementById(`${method}`).checked=true
+    document.getElementById('url').value=url
+}   
+function History (props){
+        // console.log(this.props.results,'****************')
         return(
-       <>
-            {this.props.storData.map(item => { 
-            return <div>
-            <p>{item.method}</p> <p>{item.url}</p> 
-            </div> 
-            })
-     }
+       <>    
+        {props.storData.map((item,idx) => {            
+            return (
+            <p id="history" onClick={handelfillfield} key={idx}>{item.method} {item.url}</p>
+                   )
+        })
+        }
        </>
-        )
-    }
+            )
 }
-
-
-
 export default History;
+
