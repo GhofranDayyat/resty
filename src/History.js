@@ -2,8 +2,6 @@ import React from 'react';
 import './History.scss'
 
 
-
-
 function  handelfillfield(e){
     e.preventDefault();
     let [method,url]=(e.target.innerText).split(' ')
