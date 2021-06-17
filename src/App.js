@@ -10,6 +10,7 @@ import Else from './Else'
 import Loading from './Loading'
 
 
+
 class App extends React.Component{
   constructor(props){
     super(props);
@@ -41,7 +42,7 @@ class App extends React.Component{
       this.setState({userStorage:[...this.state.userStorage,date]})
       localStorage.setItem('history',JSON.stringify(this.state.userStorage))
     } 
-    this.setState({userStorage:[...this.state.userStorage]})
+    this.setState({userStorage:[...this.state.userStorage]});
   }
   render(){
     return( 
