@@ -29,7 +29,6 @@ class App extends React.Component{
 }
   handelForm=(headers , count ,results , url , method, recived)=>{      // tack update from child-comp(form) to paraint comp state
     this.setState({headers, count, results,url , method, recived})
-    // console.log(this.state,'ssssssssssssssss');
   }
   handelLocalStorage=(date)=>{
     let flag=0
