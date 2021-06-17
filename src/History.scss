@@ -1,6 +1,11 @@
 $font-stack:    Helvetica, sans-serif;
 $primary-color: rgb(165, 44, 44);
 
+body{
+    background: rgba(240, 240, 240, 0.856);
+    
+    height: 100%
+}
 #history{
 // color: rgb(201, 3, 141);
 padding: 2%;
@@ -8,9 +13,9 @@ position: relative;
 bottom: 60px;
 font-size: 30px;
 cursor: grab;
+margin-top: 6%;
 
-}
- .delete{
+.delete{
     background-color: red;
     color: white;
     font-weight: 800px;
@@ -43,7 +48,9 @@ cursor: grab;
     border-radius: 25px;
 }
 .ee{
-    // display: hidden;
-    border: 0 solid rgb(206, 13, 180) ;
+    display: none;
+    // background-color: blue;
 
 }
+}
+ 

@@ -1,7 +1,8 @@
 import React from 'react';
 import './History.scss'
 import {Switch, Route} from 'react-router-dom'
-
+import {Link} from 'react-router-dom';
+import ErrorBoundary  from 'react-error-boundary'
 import NotFound from './NotFound';
 
 
@@ -11,8 +12,8 @@ function  handelfillfield(e){
     console.log((e.target.innerText).split(' '));
     document.getElementById(`${method}`).checked=true
     document.getElementById('url').value=url
-    if(url){
-        <Route component={NotFound} />
+    if(url===undefined){
+    return alert('Enter on url')
     }
 } 
 
