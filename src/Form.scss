@@ -1,9 +1,12 @@
 $font-stack:    Helvetica, sans-serif;
 $primary-color: balck;
-body {
+ body {
     text-align: center;
-    background: rgba(255, 253, 253, 0.856);
-
+  }
+  html,main{
+    background: rgba(240, 240, 240, 0.856);
+    
+    height: 100%
 }
 form {
     display: inline-block;
@@ -16,19 +19,50 @@ form {
     right: 30%;
 
 }
- #enter-url{
-    margin: 2%;
-}
-#url {
-    width: 22%;
-}
+
 #methods{
+  overflow: hidden;
+  margin-top: 3%;
+  right: 30px;
+
   label{
-    background: rgba(156, 155, 155, 0.336);
+    background: white;
     margin: 10px;
-    padding: 1%;
+    padding: 0.5%;
   }
   label:hover {
     background: none;
   }
+ input, label{
+  position: relative;
+  margin: 0.5%;
+  float: left;
+
 }
+#body{
+  width: 60%;
+  padding: 1.5%;
+  margin: 0%;
+  align-items: center;
+
+}
+}
+
+
+#enter-url{
+  #url{
+  width: 60%;
+  height: 20px;
+  float: left;
+  margin-right: 10px;
+  }
+  button{
+    margin-right: 30%;
+    
+  }
+  button:hover{
+    background-color:rgb(131, 89, 230);
+  }
+
+}
+

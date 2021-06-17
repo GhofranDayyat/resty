@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import Form from './Form';
 import Results from './Results'
 import History from './History'
@@ -8,7 +6,7 @@ import If from './If'
 import Else from './Else'
 import Loading from './Loading'
 import {Switch, Route} from 'react-router-dom'
-
+import NotFound from './NotFound';
 
 
 class App extends React.Component{
@@ -45,6 +43,7 @@ class App extends React.Component{
     } 
     this.setState({userStorage:[...this.state.userStorage]})
   }
+  
   render(){
     return( 
       //add paraint as empty tag or Freagment tag 
@@ -59,7 +58,7 @@ class App extends React.Component{
                 </If>
                 <Else condition={this.state.recived} >
                     <Loading loading={this.state.loading}>
-                        <h2>Waite please</h2>
+                        <h2>Please Waite</h2>
                         <div class="loader"></div>
                     </Loading>
                 </Else>
@@ -68,8 +67,10 @@ class App extends React.Component{
           <History storData = {this.state.userStorage}/>
 
           </Route>
-          <Route exact path='Help' render={()=><p>from Help</p>}  />
-          <Route path='*'>404 Not Found</Route>
+          <Route exact path='Help' render={()=><p>from Help</p>}/>
+          {/* <Route path='*'>404 Not Found</Route> */}
+          <Route component={NotFound} />
+
         </Switch>
       </main>
 
@@ -80,6 +81,7 @@ class App extends React.Component{
     )
   }
 }
+
 
 export default App;
 

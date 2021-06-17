@@ -11,6 +11,7 @@ class Form extends React.Component{
             method: '' 
         }
     }
+
     clickHandler = e=>{ // should be arrow to prevent loss this value 
         e.preventDefault();
         this.props.toggle()
@@ -18,6 +19,8 @@ class Form extends React.Component{
          let method = e.target.method.value
          let body =e.target.body.value
          try{
+            //  document.getElementById('get').style.color='red'
+             console.log(document.getElementById('get'));
               superagent[`${method}`](url).send({body}).then(date=>{
                 let query={method:method, url:url, body:body}
                 try{
@@ -41,10 +44,7 @@ class Form extends React.Component{
                 <form onSubmit={this.clickHandler}>
                 <div id='main-form'>
                     <div id='enter-url'>
-                    <label>URL: </label>
                     <input type='url' name='url' id='url' required/>
-                    <label>Body</label>
-                    <textarea type='text' name='body' id='body'></textarea>
                     <button type='submit'>GO!</button>
                     </div>
             
@@ -57,6 +57,7 @@ class Form extends React.Component{
                     <input type='radio' name='method' id='put' value='put' />
                     <label>DELETE</label>
                     <input type='radio' name='method' id='delete' value='delete'  />
+                    <textarea type='text' name='body' id='body'></textarea>
                     </div>
                 </div>
                
