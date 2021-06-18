@@ -81,7 +81,7 @@ class Form extends React.Component{
                     <label>GET</label>
                     <input type='radio' name='method' id='get' value='get' defaultChecked />
                     <label>POST</label>
-                    <input type='radio' name='method' id='post' value='post'  />
+                    <input type='radio' name='method' id='post' value='post' />
                     <label>PUT</label>
                     <input type='radio' name='method' id='put' value='put' />
                     <label>DELETE</label>
