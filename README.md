@@ -85,3 +85,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## class27 
 ![check](./assets/class27.png)
+
+## RESTy UML 
+![check](./assets/resty.jpeg)
