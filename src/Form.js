@@ -24,14 +24,14 @@ class Form extends React.Component{
                     this.props.handler(date.headers ,date.body.length ,date.body, date.req.url ,date.req.method, true)
                     this.props.saveQuery(query)
                 }catch(error){
-                    this.props.handler('error' , 0 , error.message, url, method,)
+                    this.props.handler('error' , 0 , error.message, url, method,true)
                 }
 
            
             })    
    
         }catch(error){
-            this.props.handler('error' , 0 , error.message, url, method,)
+            this.props.handler('error' , 0 , error.message, url, method,true)
         }
     }
     render(){
@@ -49,7 +49,7 @@ class Form extends React.Component{
                     <label>GET</label>
                     <input type='radio' name='method' id='get' value='get' defaultChecked />
                     <label>POST</label>
-                    <input type='radio' name='method' id='post' value='post'  />
+                    <input type='radio' name='method' id='post' value='post' />
                     <label>PUT</label>
                     <input type='radio' name='method' id='put' value='put' />
                     <label>DELETE</label>
