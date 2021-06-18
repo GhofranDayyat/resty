@@ -1,8 +1,6 @@
 $font-stack:    Helvetica, sans-serif;
 $primary-color: balck;
-// body{
-//   position: static;
-// }
+
 footer {
     position:fixed;
     bottom:0;
@@ -11,9 +9,9 @@ footer {
     padding-bottom: 2%;
     padding-left: 2%;
     margin: 0;
-    background-color: rgb(95, 94, 94);
-    
-    height: 9px;  
+    background-color: rgb(95, 94, 94);  
+    height: 9px; 
+
   }
   #copy-right{
     top: 50%;
