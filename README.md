@@ -73,9 +73,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 [URL](https://codesandbox.io/s/intelligent-cdn-5od0q)
 
 
-# Deploy by Github 
+# Deploy to Github 
 [URL](https://ghofrandayyat.github.io/resty/)
 
+# Deploy to Github 
+[URL](https://60cd2bf4bc28c9b6d90ff5fc--jovial-hugle-1fd31e.netlify.app/)
 
 
 # UML 
