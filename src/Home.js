@@ -38,7 +38,7 @@ class Home extends React.Component{
             <Form handler = {this.mainUpdate}  toggle={this.toggle} populate ={this.props.location.query}/>
                 <If condition={this.state.recived}>
                     <Results result = {this.state}/>
-                    {/* <History storData = {this.state.userStorage}/> */}
+                    {/* <History storData = {this.state.userStorage}/> */} {/*to render history in home*/}
                 </If>
                 <Else condition={this.state.recived} >
                     <Loading loading={this.state.loading}>
