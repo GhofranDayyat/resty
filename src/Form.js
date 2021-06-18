@@ -41,10 +41,7 @@ class Form extends React.Component{
                 <form onSubmit={this.clickHandler}>
                 <div id='main-form'>
                     <div id='enter-url'>
-                    <label>URL: </label>
                     <input type='url' name='url' id='url' required/>
-                    <label>Body</label>
-                    <textarea type='text' name='body' id='body'></textarea>
                     <button type='submit'>GO!</button>
                     </div>
             
@@ -57,6 +54,7 @@ class Form extends React.Component{
                     <input type='radio' name='method' id='put' value='put' />
                     <label>DELETE</label>
                     <input type='radio' name='method' id='delete' value='delete'  />
+                    <textarea type='text' name='body' id='body'></textarea>
                     </div>
                 </div>
                

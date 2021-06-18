@@ -1,14 +1,12 @@
-
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import Form from './Form';
 import Results from './Results'
 import History from './History'
 import If from './If'
 import Else from './Else'
 import Loading from './Loading'
-
+import {Switch, Route} from 'react-router-dom'
+import ReRun from './ReRun'
 
 
 class App extends React.Component{
@@ -30,6 +28,7 @@ class App extends React.Component{
 }
   handelForm=(headers , count ,results , url , method, recived)=>{      // tack update from child-comp(form) to paraint comp state
     this.setState({headers, count, results,url , method, recived})
+    // console.log(this.state,'ssssssssssssssss');
   }
   handelLocalStorage=(date)=>{
     let flag=0
@@ -42,32 +41,48 @@ class App extends React.Component{
       this.setState({userStorage:[...this.state.userStorage,date]})
       localStorage.setItem('history',JSON.stringify(this.state.userStorage))
     } 
-    this.setState({userStorage:[...this.state.userStorage]});
+    this.setState({userStorage:[...this.state.userStorage]})
   }
   render(){
     return( 
       //add paraint as empty tag or Freagment tag 
-      <>  
-      <Header/>
-      <Footer/>
-      <Form handler = {this.handelForm} saveQuery={this.handelLocalStorage} toggle={this.toggle}/>
+      <>
+      <main>
+        <Switch>
+          <Route exact path='/'> 
+            <Form handler = {this.handelForm} saveQuery={this.handelLocalStorage} toggle={this.toggle}/>
+                <If condition={this.state.recived}>
+                    <Results result = {this.state}/>
+                    <History storData = {this.state.userStorage}/>
+                </If>
+                <Else condition={this.state.recived} >
+                    <Loading loading={this.state.loading}>
+                        <h2>Waite please</h2>
+                        <div class="loader"></div>
+                    </Loading>
+                </Else>
+          </Route>
 
-      <If condition={this.state.recived}>
-        <Results result = {this.state}/>
-        <History storData = {this.state.userStorage}/>
-      </If>
-      <Else condition={this.state.recived} >
-         <Loading loading={this.state.loading}>
-            <h2>Waite please</h2>
 
-            <div class="loader"></div>
+          <Route exact path='/history' component={ReRun}>
+              <History storData = {this.state.userStorage} />
+          </Route>
 
-         </Loading>
-      </Else>
+
+          <Route exact path='Help' render={()=><p>from Help</p>}  />
+          <Route path='*'>404 Not Found</Route>
+        </Switch>
+      </main>
+
+
+      
+      
       </>
     )
   }
 }
 
 export default App;
+
+
 

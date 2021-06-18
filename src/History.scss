@@ -1,12 +1,55 @@
 $font-stack:    Helvetica, sans-serif;
 $primary-color: rgb(165, 44, 44);
 
+body{
+    background: rgba(240, 240, 240, 0.856);
+    
+    height: 100%
+}
 #history{
-color: rgb(201, 3, 141);
-background-color: rgb(23, 158, 192);
+// color: rgb(201, 3, 141);
 padding: 2%;
 position: relative;
 bottom: 60px;
 font-size: 30px;
 cursor: grab;
+margin-top: 6%;
+.delete{
+    background-color: red;
+    color: white;
+    font-weight: 800px;
+    padding: 10px;
+    border: 0 solid red;
+    border-radius: 25px;
 }
+.put{
+    background-color: yellow;
+    color: white;
+    font-weight: 800px;
+    padding: 10px;
+    border: 0 solid yellow ;
+    border-radius: 25px;
+}
+.get{
+    background-color: blue;
+    color: white;
+    font-weight: 800px;
+    padding: 10px;
+    border: 0 solid blue ;
+    border-radius: 25px;
+}
+.post{
+    background-color: green;
+    color: white;
+    font-weight: bolder;
+    padding: 10px;
+    border: 0 solid green ;
+    border-radius: 25px;
+}
+.hid{
+    display: none;
+
+
+}
+}
+ 
