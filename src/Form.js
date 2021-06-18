@@ -11,7 +11,6 @@ class Form extends React.Component{
             method: '' 
         }
     }
-
     clickHandler = e=>{ // should be arrow to prevent loss this value 
         e.preventDefault();
         this.props.toggle()
@@ -19,8 +18,6 @@ class Form extends React.Component{
          let method = e.target.method.value
          let body =e.target.body.value
          try{
-            //  document.getElementById('get').style.color='red'
-             console.log(document.getElementById('get'));
               superagent[`${method}`](url).send({body}).then(date=>{
                 let query={method:method, url:url, body:body}
                 try{
