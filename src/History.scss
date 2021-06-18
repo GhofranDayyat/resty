@@ -6,50 +6,93 @@ body{
     
     height: 100%
 }
-#history{
-// color: rgb(201, 3, 141);
-padding: 2%;
-position: relative;
-bottom: 60px;
-font-size: 30px;
-cursor: grab;
-margin-top: 6%;
-.delete{
-    background-color: red;
-    color: white;
-    font-weight: 800px;
-    padding: 10px;
-    border: 0 solid red;
-    border-radius: 25px;
-}
-.put{
-    background-color: yellow;
-    color: white;
-    font-weight: 800px;
-    padding: 10px;
-    border: 0 solid yellow ;
-    border-radius: 25px;
-}
-.get{
-    background-color: blue;
-    color: white;
-    font-weight: 800px;
-    padding: 10px;
-    border: 0 solid blue ;
-    border-radius: 25px;
-}
-.post{
-    background-color: green;
-    color: white;
-    font-weight: bolder;
-    padding: 10px;
-    border: 0 solid green ;
-    border-radius: 25px;
-}
-.hid{
-    display: none;
+#main-history{
+    position: relative;
+    #history{
+        // color: rgb(201, 3, 141);
+        
+        padding: 2%;
+        position: relative;
+        bottom: 60px;
+        font-size: 20px;
+        width: 40%;
+        margin-right: 0;
+        cursor: grab;
+        margin-top: 6%;
+        .delete{
+            background-color: red;
+            color: white;
+            font-weight: 800px;
+            padding: 10px;
+            border: 0 solid red;
+            border-radius: 25px;
+        }
+        .put{
+            background-color: yellow;
+            color: white;
+            font-weight: 800px;
+            padding: 10px;
+            border: 0 solid yellow ;
+            border-radius: 25px;
+        }
+        .get{
+            background-color: blue;
+            color: white;
+            font-weight: 800px;
+            padding: 10px;
+            border: 0 solid blue ;
+            border-radius: 25px;
+        }
+        .post{
+            background-color: green;
+            color: white;
+            font-weight: bolder;
+            padding: 10px;
+            border: 0 solid green ;
+            border-radius: 25px;
+        }
+        .hid{
+            display: none;
+        
+        
+        }
+        }
 
 
+    #reRun-link{
+            background-color: rgb(75, 73, 73);
+            border: 1px solid black;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            // display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: right;
+            right: 2%;
+            border-radius: 10px;
+        
+        
+            
+            color: black;
+            font-size: xx-large;
+            background-color: rgb(137, 191, 228) ;
+            border: double;
+            position: absolute;
+            border-radius: 10px;
+            margin-right: 10%;
+            bottom: 95%;
+            left: 60%;
+        
+        
+    }
+    #reRun-link:hover{
+            background-color: rgba(240, 240, 240, 0.856);
+            border: 1px solid black;
+            color: black;
+            border-radius: 10px;
+        
+        
+    }
 }
-}
- 
