@@ -3,7 +3,8 @@ $primary-color: rgb(165, 44, 44);
 
 main{
     background: rgba(240, 240, 240, 0.856);
-    
+    position: relative;
+
     height: 100%
 }
 
@@ -12,18 +13,17 @@ main{
 #detail-div{
     color: black;
     font-size: xx-large;
-    overflow: hidden;
+    // overflow: hidden;
     overflow-y: scroll;
     // margin: 2%;
     // margin-bottom: 30%;
     background-color: rgb(137, 191, 228) ;
     border: double;
-    // position: absolute;
-    position: relative;
+    position: absolute;
     border-radius: 10px;
     margin-top: 1%;
-    bottom: 200px;
+    // bottom: 200px;
     left: 50%;
-    height: 50%;
+    // height: 50%;
     width: 50%;
 }
